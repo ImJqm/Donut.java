@@ -40,15 +40,15 @@ public class coordsystem {
 
     for (int i = 0; i < 12; i++) {
       interpolatedColors.add(new Color(
-          c1.getR() + (((c2.getR() - c1.getR()) / 12) * i),
-          c1.getG() + (((c2.getG() - c1.getG()) / 12) * i),
-          c1.getB() + (((c2.getB() - c1.getB()) / 12) * i)));
+          c1.getR() + (((c2.getR() - c1.getR()) / 2) * i),
+          c1.getG() + (((c2.getG() - c1.getG()) / 2) * i),
+          c1.getB() + (((c2.getB() - c1.getB()) / 2) * i)));
     }
 
     for (int i = 0; i < 12; i++) {
-      LIndex[i] = "\033[38;2;" + interpolatedColors.get(i).getR() + ";" + interpolatedColors.get(i).getG() + ";"
+      LIndex[i] = "\033[48;2;" + interpolatedColors.get(i).getR() + ";" + interpolatedColors.get(i).getG() + ";"
           + interpolatedColors.get(i).getB() + "m" + LIndex[i];
-      // System.out.println(interpolatedColors.get(i).toString());
+      System.out.println(interpolatedColors.get(i).toString());
 
     }
 
@@ -96,12 +96,12 @@ public class coordsystem {
 
   // iterates through the 2d array grid system and prints it out
   public void printScreen() {
-    for (int i = 0; i < screeny; i++) {
-      System.out.println();
-      for (int j = 0; j < screenx; j++) {
-        System.out.print(grid[i][j]);
-      }
-    }
+    // for (int i = 0; i < screeny; i++) {
+    // System.out.println();
+    // for (int j = 0; j < screenx; j++) {
+    // System.out.print(grid[i][j]);
+    // }
+    // }
     // for (int i = 0; i < 12; i++) {
     // System.out.println();
     // }
