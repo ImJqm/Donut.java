@@ -16,10 +16,10 @@ public class Donut {
   static ArrayList<Double> gridL = new ArrayList<Double>();
 
   // sets radius of torus
-  static final double R1 = 1.0;
+  static final double R1 = 2.0;
 
   // sets radius of center hole in donut
-  static final double R2 = 2.0;
+  static final double R2 = 4.0;
 
   // A and B are values between 0 and 2pi to control the donut's pitch and yaw
   static double A = 0.0;
@@ -29,8 +29,8 @@ public class Donut {
   static double pc1 = 0.0;
 
   // sets the width and height of the display
-  static final int screenx = 50;
-  static final int screeny = 50;
+  static final int screenx = 100;
+  static final int screeny = 100;
 
   // creates coordinate system to access everywhere
   static coordsystem cs;
@@ -50,7 +50,6 @@ public class Donut {
     cs = new coordsystem(screenx, screeny, colors);
     // update loop
     while (true) {
-      wait(1000);
 
       // clears screen
       System.out.print("\u001b[H");
@@ -117,7 +116,7 @@ public class Donut {
         gridy.add(((pc1 * (cosj * sinB - cosB * sinA * sinj) + R1 * cosA * cosB * sini)));
 
         // adds tge z coordinates to the array that stores each one
-        gridz.add((cosA * (R2 + R1 * cosi) * sinj + R1 * sinA * sini) + 5.0);
+        gridz.add((cosA * (R2 + R1 * cosi) * sinj + R1 * sinA * sini) + 8.0);
 
         // calculates the luminance by taking a point (x, y, z) taking the surface
         // normal of that point, and taking the dot product of that vector against the
